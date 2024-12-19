@@ -27,9 +27,16 @@ function App(): React.JSX.Element {
   function saveValue() {
     NativeLocalStorage?.setItem(editingValue ?? EMPTY, 'myKey');
     setValue(editingValue);
-    const m = NativeModule2Module?.masti();
-    console.log("PRINTING SOMEHTING: ", m)
+    // const m = NativeModule2Module?.geocodeAddress();
+    // console.log("PRINTING SOMEHTING: ", m)
     // setValue(m);
+    NativeModule2Module.geocodeAddress('New York, NY')
+      .then(result => console.log(result))
+      .catch(error => console.error(error));
+    NativeModule2Module.reverseGeocode(21.1531694, 72.775241)
+      .then(address => console.log(address))
+      .catch(error => console.error(error));
+
   }
 
   function clearAll() {
