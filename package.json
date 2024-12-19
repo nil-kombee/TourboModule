@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "codegenConfig": {
-    "name": "NativeLocalStorageSpec",
+    "name": "NativeModule2Spec123",
     "type": "modules",
     "jsSrcsDir": "specs",
     "android": {

@@ -5,11 +5,13 @@ import android.content.SharedPreferences
 import com.turbomoduleexample.NativeLocalStorageSpec
 import com.facebook.react.bridge.ReactApplicationContext
 
+// All the functionalities and functions you want to call natively
 class NativeLocalStorageModule(reactContext: ReactApplicationContext) : NativeLocalStorageSpec(reactContext) {
 
   override fun getName() = NAME
 
   override fun setItem(value: String, key: String) {
+    // Native shared prefs
     val sharedPref = getReactApplicationContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
     val editor = sharedPref.edit()
     editor.putString(key, value)
@@ -36,6 +38,7 @@ class NativeLocalStorageModule(reactContext: ReactApplicationContext) : NativeLo
     editor.apply()
   }
 
+  // Static/ Global Variable. Companion object mean you do not need to create the instance of the class to access this variable
   companion object {
     const val NAME = "NativeLocalStorage"
   }

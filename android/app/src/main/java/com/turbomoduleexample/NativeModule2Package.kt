@@ -5,21 +5,21 @@ import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
-// Inheritance Class Animal; Class Dog: Animal()
-class NativeLocalStoragePackage : TurboReactPackage() {
+
+class NativeModule2Package : TurboReactPackage() {
 
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? =
-    if (name == NativeLocalStorageModule.NAME) {
-      NativeLocalStorageModule(reactContext)
+    if (name == NativeModule2Module.NAME) {
+      NativeModule2Module(reactContext)
     } else {
       null
     }
 
   override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
     mapOf(
-      NativeLocalStorageModule.NAME to ReactModuleInfo(
-        _name = NativeLocalStorageModule.NAME,
-        _className = NativeLocalStorageModule.NAME,
+      NativeModule2Module.NAME to ReactModuleInfo(
+        _name = NativeModule2Module.NAME,
+        _className = NativeModule2Module.NAME,
         _canOverrideExistingModule = false,
         _needsEagerInit = false,
         isCxxModule = false,

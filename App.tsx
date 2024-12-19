@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import NativeLocalStorage from './specs/NativeLocalStorage';
+import NativeModule2Module from './specs/NativeModule2';
 
 const EMPTY = '<empty>';
 
@@ -26,6 +27,9 @@ function App(): React.JSX.Element {
   function saveValue() {
     NativeLocalStorage?.setItem(editingValue ?? EMPTY, 'myKey');
     setValue(editingValue);
+    const m = NativeModule2Module?.masti();
+    console.log("PRINTING SOMEHTING: ", m)
+    // setValue(m);
   }
 
   function clearAll() {
